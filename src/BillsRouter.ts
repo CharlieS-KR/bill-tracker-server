@@ -44,9 +44,15 @@ BillsRouter.put('/:billId', async (req, res) => {
 })
 
 // delete a bill
-BillsRouter.delete('/:billId', (req, res) => {
+BillsRouter.delete('/:billId', async (req, res) => {
     const { billId } = req.params
-    res.send('here we delete a bill')
+    const foundBill = await Bill.findById(billId)
+    if (foundBill) {
+        const deletedBill = await foundBill.remove()
+        res.send(deletedBill)
+    } else {
+        res.status(404).send(`We couldn't find a bill with that ID`)
+    }
 })
 
 export default BillsRouter
