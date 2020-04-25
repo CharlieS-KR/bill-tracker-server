@@ -1,7 +1,8 @@
 import Express from 'express'
 import bodyParser from 'body-parser'
-import models, { connectDb } from './mongooseSetup'
+import { connectDb } from './mongooseSetup'
 import BillsRouter from './BillsRouter'
+require('dotenv').config()
 
 const port = process.env.PORT || 3000
 const server: Express.Application = Express()
@@ -16,8 +17,6 @@ server.get('/', (req: Express.Request, res: Express.Response) => {
 })
 
 server.use('/bills', BillsRouter)
-
-
 
 connectDb().then(async () => {
     server.listen(port, () => console.log(`the server is listening on port ${port}`))

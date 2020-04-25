@@ -1,7 +1,8 @@
 import mongoose from 'mongoose';
 import Bill from './bill'
+require('dotenv').config()
 
-const dbLocation = process.env.DATABASE_URL || 'mongodb://localhost:27017/bill-tracker'
+const dbLocation = process.env.DATABASE_URL as string
 
 const connectDb = () => {
   return mongoose.connect(dbLocation, { useNewUrlParser: true, useUnifiedTopology: true });
