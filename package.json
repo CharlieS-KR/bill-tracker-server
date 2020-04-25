@@ -1,0 +1,9 @@
+{
+  "name": "bill-tracker-server",
+  "version": "1.0.0",
+  "description": "The backend of a bill tracking application written in Node/Express",
+  "main": "server.ts",
+  "repository": "https://github.com/SparksFullStack/bill-tracker-server.git",
+  "author": "Charlie Sparks",
+  "license": "MIT"
+}
