@@ -1,5 +1,5 @@
 import Mongoose from 'mongoose'
-import { PaymentMethods } from './constants'
+import { PaymentMethods, PaymentCategories } from './constants'
 
 const billSchema = new Mongoose.Schema({
     name: {
@@ -25,13 +25,17 @@ const billSchema = new Mongoose.Schema({
         type: Number,
         required: true
     },
-    biWeeklyEmount: {
+    biWeeklyAmount: {
         type: Number,
-        required: true
+        required: false
     },
     paymentMethod: {
         type: PaymentMethods,
         required: true
+    },
+    category: {
+        type: PaymentCategories,
+        required: false
     }
 })
 
