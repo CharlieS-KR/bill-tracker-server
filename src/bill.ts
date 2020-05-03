@@ -13,7 +13,7 @@ const billSchema = new Mongoose.Schema({
         trim: true
     },
     dueDate: {
-        type: Date,
+        type: String,
         required: true
     },
     description: {

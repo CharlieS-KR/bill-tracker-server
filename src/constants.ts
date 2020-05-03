@@ -23,7 +23,7 @@ export enum PaymentCategories {
 export interface IBill {
     name: string
     company: string
-    dueDate: Date | string
+    dueDate: string
     description?: string
     totalAmount: number
     biWeeklyAmount?: number
